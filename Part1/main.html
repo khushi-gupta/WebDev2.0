@@ -25,9 +25,16 @@
 
   <script type="text/javascript">
   let id;
-    function setDelay()
+    function setDelay(x)
     {
-      id=window.setTimeout(alert,2*1000,"Okay,after 2secs");
+      if(x>=3)
+      {
+      id=window.setTimeout(alert,x*1000,`Okay,after ${x} secs`);
+      }
+      else
+      {
+        id=window.setTimeout(alert,(x-1)*1000,`Okay,after ${x-1} secs`);
+      }
     }
     function setClear()
     {
@@ -35,7 +42,7 @@
       alert("Cleared!");
     }
   </script>
-  <input type="button" onclick="setDelay();" value="After 2 secs">
+  <input type="button" onclick="setDelay(5);" value="After 2 secs">
   <button type="button" onclick="setClear();">Clear Delay</button>
 </body>
 
