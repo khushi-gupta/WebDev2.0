@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Javascript Testing</title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    function msg(x)
+    {
+      alert("Welcome!");
+      alert(x*x*x);
+    }
+    function msgg(x)
+    {
+      return x*x;
+    }
+    console.log("DONE");
+    document.write(msgg(3));
+  </script>
+  <input type="button"  onclick="msg(2)" value="butttton"/>
+
+  <script type="text/javascript">
+  let id;
+    function setDelay(x)
+    {
+      if(x>=3)
+      {
+      id=window.setTimeout(alert,x*1000,`Okay,after ${x} secs`);
+      }
+      else
+      {
+        id=window.setTimeout(alert,(x-1)*1000,`Okay,after ${x-1} secs`);
+      }
+    }
+    function setClear()
+    {
+      window.clearTimeout(id);
+      alert("Cleared!");
+    }
+  </script>
+  <input type="button" onclick="setDelay(5);" value="After 2 secs">
+  <button type="button" onclick="setClear();">Clear Delay</button>
+</body>
+
+</html>
