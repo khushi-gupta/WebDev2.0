@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>CountDown</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Seconds CountDown!!</h1>
+  <script type="text/javascript">
+    function count() {
+      let x=document.getElementById("begg").value;
+      console.log(x);
+      if(x==0)
+      {document.getElementById("timer").innerHTML="Cannot be empty!!";return;}
+      let start = x;
+      let pq = setInterval(function() {
+
+        console.log("1 second elapsed")
+        document.getElementById("timer").innerHTML = start;
+        start--;
+        if (start == 0) {
+          document.getElementById("timer").innerHTML="Finished!";
+          clearInterval(pq);
+        }
+      }, 1000);
+    }
+  </script>
+  <input type="text" id="begg" value="">
+  <button type="button" onclick="count()">Click Me</button>
+  <p id="timer"></p>
+</body>
+
+</html>

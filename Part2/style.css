@@ -1,0 +1,14 @@
+h1{
+  font-size: 30px;
+  color: blue;
+  font-family: verdana;
+}
+body{
+  background-color: pink;
+}
+input{
+  align-items: center;
+}
+button{
+  align-items: center;
+}
