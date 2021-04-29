@@ -12,19 +12,18 @@
   <script type="text/javascript">
     function count() {
       let x=document.getElementById("begg").value;
-      console.log(x);
       if(x==0)
-      {document.getElementById("timer").innerHTML="Cannot be empty!!";return;}
-      let start = x;
+      {document.getElementById("timer").innerHTML="Cannot be empty!! or 0";return;}
+
       let pq = setInterval(function() {
 
         console.log("1 second elapsed")
-        document.getElementById("timer").innerHTML = start;
-        start--;
-        if (start == 0) {
+        document.getElementById("timer").innerHTML = x;
+        if (x == 0) {
           document.getElementById("timer").innerHTML="Finished!";
           clearInterval(pq);
         }
+        x--;
       }, 1000);
     }
   </script>
