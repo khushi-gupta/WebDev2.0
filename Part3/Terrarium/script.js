@@ -19,7 +19,7 @@ function dragElement(terrariumElement) {
     pos3 = 0,
     pos4 = 0;
   terrariumElement.onpointerdown = pointerDrag;
-
+  //onpointerdown is a web api to call event pointerdown when a button/mouse is clicked or screen is touched
   function pointerDrag(e) {
     e.preventDefault();
     pos3 = e.clientX;
@@ -29,16 +29,16 @@ function dragElement(terrariumElement) {
 
     function elementDrag(e) {
       pos1 = pos3 - e.clientX;//clientX gives current position of where the mouse is clicked
-      pos2 = pos4 - e.clientY;
-      pos3 = e.clientX;
-      pos4 = e.clientY;
+      pos2 = pos4 - e.clientY;//pos1,pos2 give difference between final and intial positions which is then used for changing the coordinates of the plant element
+      pos3 = e.clientX;// current position
+      pos4 = e.clientY;//pos3,pos4 hold new position
       console.log(pos1, pos2, pos3, pos4);
       terrariumElement.style.top = terrariumElement.offsetTop - pos2+'px';// offsetLeft or offsetTop return position in pixels
       terrariumElement.style.left = terrariumElement.offsetLeft- pos1+'px';// therefore we add 'px' so that pos1 ,pos2 is also in pixels
     }
 
     function stopElementDrag() {
-      document.onpointerup = null;
+      document.onpointerup = null;// when pointer is up we call onpointerup, this means we stopped dragging the element.
       document.onpointermove = null;
 
     }
